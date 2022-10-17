@@ -86,7 +86,10 @@ function TimePicker({
                <div className="react-ios-time-picker-popup">
                   <div
                      className={`react-ios-time-picker-popup-overlay ${popupClassName || ''}`}
-                     onClick={() => setIsOpen(!isOpen)}
+                     onClick={() => {
+                        onCancel()
+                        setIsOpen(!isOpen)
+                     }}
                   />
                   <TimePickerSelection {...params} />
                </div>
