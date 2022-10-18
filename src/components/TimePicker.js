@@ -26,6 +26,7 @@ function TimePicker({
    onOpen = () => {},
    popupClassName = null,
    inputClassName = null,
+                       hourOptions = []
 }) {
    const [isOpen, setIsOpen] = useState(initialIsOpenValue);
    const [height, setHeight] = useState(cellHeight);
@@ -63,6 +64,7 @@ function TimePicker({
       onAmPmChange,
       initialValue: finalValue,
       pickerDefaultValue,
+      hourOptions,
    };
 
    return (

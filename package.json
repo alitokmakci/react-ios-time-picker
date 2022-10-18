@@ -1,6 +1,6 @@
 {
   "name": "react-time-picker-ios-like",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A modern time picker for your React app.",
   "main": "dist/TimePicker.js",
   "module": "dist/TimePicker.js",
@@ -19,8 +19,8 @@
     "eslint:fix": "npm run eslint -- --fix"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "eslintConfig": {
     "extends": [
@@ -56,8 +56,8 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"

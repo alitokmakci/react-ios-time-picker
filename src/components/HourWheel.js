@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { initialNumbersValue, returnSelectedValue } from '../helpers';
 import PickerEffects from './PickerEffects';
 
-function HourWheel({ height, value, setValue, use12Hours }) {
+function HourWheel({ height, value, setValue, use12Hours, hourOptions }) {
    const hourLength = use12Hours ? 13 : 24;
    const [hours, setHours] = useState(
       initialNumbersValue(height, hourLength, parseInt(value.slice(0, 2))),
