@@ -18,6 +18,8 @@ function TimePickerSelection({
    seperator,
    use12Hours,
    onAmPmChange,
+   minOptions,
+   hourOptions,
 }) {
    const initialTimeValue = use12Hours ? initialValue.slice(0, 5) : initialValue;
    const [value, setValue] = useState(
@@ -51,6 +53,8 @@ function TimePickerSelection({
       onAmPmChange,
       setHourFormat,
       hourFormat,
+      hourOptions,
+      minOptions,
    };
 
    const handleSave = () => {
@@ -66,7 +70,7 @@ function TimePickerSelection({
    };
 
    return (
-      <div className="react-ios-time-picker  react-ios-time-picker-transition">
+      <div className="react-ios-time-picker react-ios-time-picker-transition">
          {controllers && (
             <div className="react-ios-time-picker-btn-container">
                <button
@@ -91,9 +95,9 @@ function TimePickerSelection({
                   height: `${height}px`,
                }}
             />
-            <HourWheel {...params} />
+            <HourWheel hourOptions={hourOptions} {...params} />
             {seperator && <div className="react-ios-time-picker-colon">:</div>}
-            <MinuteWheel {...params} />
+            <MinuteWheel minOptions={minOptions} {...params} />
             {use12Hours && <HourFormat {...params} />}
          </div>
       </div>

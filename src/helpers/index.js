@@ -1,4 +1,9 @@
-export const initialNumbersValue = (heightValue = 54, numbersLength = 24, value = null) => {
+export const initialNumbersValue = (
+   heightValue = 54,
+   numbersLength = 24,
+   value = null,
+   options = [],
+) => {
    const initialValue24hourFormat = [
       {
          number: '00',
@@ -28,11 +33,22 @@ export const initialNumbersValue = (heightValue = 54, numbersLength = 24, value 
    const arrayOfSelectedValue =
       numbersLength === 13 ? initialValue12hourFormat : initialValue24hourFormat;
    let count = 0;
-   for (let index = 0; index < 3; index++) {
+   for (let index = 0; index < 5; index++) {
       for (let j = 0; j < numbersLength; j++) {
+         console.log(options);
+
+         if (options.length !== 0) {
+            const option = j.toString().length === 1 ? `0${j}` : j.toString();
+
+            if (!options.includes(option)) {
+               continue;
+            }
+         }
+
          if ((index === 0 && j < 2) || (numbersLength === 13 && j === 0)) {
             continue;
          }
+
          if (index === 1 && j === value) {
             if (j.toString().length === 1) {
                arrayOfSelectedValue.push({

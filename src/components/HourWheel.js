@@ -5,14 +5,14 @@ import PickerEffects from './PickerEffects';
 function HourWheel({ height, value, setValue, use12Hours, hourOptions }) {
    const hourLength = use12Hours ? 13 : 24;
    const [hours, setHours] = useState(
-      initialNumbersValue(height, hourLength, parseInt(value.slice(0, 2))),
+      initialNumbersValue(height, hourLength, parseInt(value.slice(0, 2)), hourOptions),
    );
    const mainListRef = useRef(null);
    const [cursorPosition, setCursorPosition] = useState(null);
    const [firstCursorPosition, setFirstCursorPosition] = useState(null);
    const [currentTranslatedValue, setCurrentTranslatedValue] = useState(
       parseInt(
-         initialNumbersValue(height, hourLength, parseInt(value.slice(0, 2))).filter(
+         initialNumbersValue(height, hourLength, parseInt(value.slice(0, 2)), hourOptions).filter(
             (item) => item.number === value.slice(0, 2) && item.selected === true,
          )[0].translatedValue,
       ),

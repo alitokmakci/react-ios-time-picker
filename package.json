@@ -1,6 +1,6 @@
 {
   "name": "react-time-picker-ios-like",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A modern time picker for your React app.",
   "main": "dist/TimePicker.js",
   "module": "dist/TimePicker.js",

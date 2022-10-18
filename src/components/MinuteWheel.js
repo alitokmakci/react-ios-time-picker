@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { initialNumbersValue, returnSelectedValue } from '../helpers';
 
-function MinuteWheel({ height, value, setValue }) {
-   const [hours, setHours] = useState(initialNumbersValue(height, 60, parseInt(value.slice(3, 6))));
+function MinuteWheel({ height, value, setValue, minOptions }) {
+   const [hours, setHours] = useState(
+      initialNumbersValue(height, 60, parseInt(value.slice(3, 6)), minOptions),
+   );
    const mainListRef = useRef(null);
    const [cursorPosition, setCursorPosition] = useState(null);
    const [firstCursorPosition, setFirstCursorPosition] = useState(null);
    const [currentTranslatedValue, setCurrentTranslatedValue] = useState(
       parseInt(
-         initialNumbersValue(height, 60, parseInt(value.slice(3, 6))).filter(
+         initialNumbersValue(height, 60, parseInt(value.slice(3, 6)), minOptions).filter(
             (item) => item.number === value.slice(3, 6) && item.selected === true,
          )[0].translatedValue,
       ),

@@ -26,7 +26,8 @@ function TimePicker({
    onOpen = () => {},
    popupClassName = null,
    inputClassName = null,
-                       hourOptions = []
+   hourOptions = [],
+   minOptions = [],
 }) {
    const [isOpen, setIsOpen] = useState(initialIsOpenValue);
    const [height, setHeight] = useState(cellHeight);
@@ -65,6 +66,7 @@ function TimePicker({
       initialValue: finalValue,
       pickerDefaultValue,
       hourOptions,
+      minOptions,
    };
 
    return (
@@ -93,7 +95,11 @@ function TimePicker({
                         setIsOpen(!isOpen);
                      }}
                   />
-                  <TimePickerSelection {...params} />
+                  <TimePickerSelection
+                     {...params}
+                     hourOptions={hourOptions}
+                     minOptions={minOptions}
+                  />
                </div>
             </Portal>
          )}
